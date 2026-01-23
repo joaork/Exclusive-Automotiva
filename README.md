@@ -44,3 +44,4 @@ O projeto foi construído utilizando as melhores práticas de desenvolvimento we
 * **HTML5 / CSS3** (Semântico e moderno)
 * **JavaScript (ES6+)**
 * **PHP**
+* **SQL**
