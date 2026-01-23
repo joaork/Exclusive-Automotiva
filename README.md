@@ -6,8 +6,8 @@
 
 ## 📸 Demonstração
 
-![Screenshot da Home]([LINK_PARA_IMAGEM_DA_HOME_AQUI])
-*(Adicione aqui um GIF ou prints mostrando o fluxo de agendamento)*
+![Screenshot da Home]([(https://imgur.com/va0f24I)])
+
 
 ## 📄 Sobre o Projeto
 
