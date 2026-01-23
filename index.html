@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EXCLUSIVE - Agendamento</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-theme="light">
+    <div class="container-principal">
+        <header>
+            <div class="topo-cabecalho">
+                <button class="botao-tema" id="botao-alternar-tema" title="Alternar Tema">
+                    <i class="fa-solid fa-moon"></i>
+                </button>
+            </div>
+            <h1><i class="fa-solid"></i>EXCLUSIVE</h1>
+            <h2><i class="fa-solid"></i>ESTÉTICA AUTOMOTIVA</h2>
+            <p>AGENDAMENTO ONLINE</p>
+        </header>
+
+        <div class="container-progresso">
+            <div class="passo-progresso ativo" data-step="1">
+                <i class="fa-solid fa-user"></i>
+            </div>
+            
+            <div class="passo-progresso" data-step="2">
+                <i class="fa-solid fa-screwdriver-wrench"></i>
+            </div>
+            
+            <div class="passo-progresso" data-step="3">
+                <i class="fa-regular fa-calendar"></i>
+            </div>
+            
+            <div class="passo-progresso" data-step="4">
+                <i class="fa-regular fa-clock"></i>
+            </div>
+            
+            <div class="passo-progresso" data-step="5">
+                <i class="fa-solid fa-check"></i>
+            </div>
+        </div>
+
+        <div id="area-conteudo">
+            <div id="etapa-1-funcionario" class="conteudo-etapa">
+                <div class="cabecalho-etapa"><h2>Escolha o Funcionário</h2></div>
+                <div id="lista-funcionarios" class="grade-opcoes">
+                    <div style="text-align:center; color:var(--text-muted)">Carregando...</div>
+                </div>
+            </div>
+
+            <div id="etapa-2-servico" class="conteudo-etapa" style="display:none;">
+                <div class="cabecalho-etapa">
+                    <button class="botao-voltar-icone" onclick="mostrarEtapa('etapa-1-funcionario')"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h2>Selecione o Serviço</h2>
+                </div>
+                <div id="lista-servicos" class="grade-opcoes"></div>
+            </div>
+
+            <div id="etapa-3-dia" class="conteudo-etapa" style="display:none;">
+                <div class="cabecalho-etapa">
+                    <button class="botao-voltar-icone" onclick="mostrarEtapa('etapa-2-servico')"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h2>Escolha a Data</h2>
+                </div>
+                <div class="campo-formulario">
+                    <i class="fa-regular fa-calendar"></i>
+                    <input type="date" id="data-agendamento">
+                </div>
+                <button class="botao-primario" onclick="buscarHorarios()">Ver Disponibilidade <i class="fa-solid fa-chevron-right"></i></button>
+            </div>
+
+            <div id="etapa-4-horario" class="conteudo-etapa" style="display:none;">
+                <div class="cabecalho-etapa">
+                    <button class="botao-voltar-icone" onclick="mostrarEtapa('etapa-3-dia')"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h2>Escolha o Horário</h2>
+                </div>
+                <p style="text-align:center; color: var(--text-muted); margin-bottom: 20px;">
+                    Dia <strong id="data-selecionada-view" style="color:var(--text-main);"></strong>
+                </p>
+                <div id="lista-horarios" class="container-flexivel"></div>
+            </div>
+
+            <div id="etapa-5-confirmacao" class="conteudo-etapa" style="display:none;">
+                <div class="cabecalho-etapa">
+                    <button class="botao-voltar-icone" onclick="mostrarEtapa('etapa-4-horario')"><i class="fa-solid fa-arrow-left"></i></button>
+                    <h2>Seus Dados</h2>
+                </div>
+
+                <div class="cartao-resumo">
+                    <div class="item-resumo"><span>Profissional</span> <strong id="resumo-profissional">-</strong></div>
+                    <div class="item-resumo"><span>Serviço</span> <strong id="resumo-servico">-</strong></div>
+                    <div class="item-resumo"><span>Data & Hora</span> <strong id="resumo-data-hora">-</strong></div>
+                </div>
+                
+                <form id="form-agendamento">
+                    <div class="campo-formulario"><i class="fa-regular fa-user"></i><input type="text" id="nome-cliente" placeholder="Seu Nome" required></div>
+                    <div class="campo-formulario"><i class="fa-brands fa-whatsapp"></i><input type="tel" id="telefone-cliente" placeholder="WhatsApp" required></div>
+                    <div class="campo-formulario"><i class="fa-solid fa-car-side"></i><input type="text" id="placa-veiculo" placeholder="Placa (ABC-1234)" required style="text-transform: uppercase;"></div>
+                    <div class="campo-formulario"><i class="fa-regular fa-envelope"></i><input type="email" id="email-cliente" placeholder="E-mail (Opcional)"></div>
+                    <div class="campo-formulario"><i class="fa-regular fa-comment"></i><textarea id="observacoes-cliente" rows="2" placeholder="Observações..."></textarea></div>
+                    
+                    <button type="button" class="botao-confirmar" onclick="confirmarAgendamento()">Confirmar Agendamento <i class="fa-solid fa-check"></i></button>
+                </form>
+            </div>
+        </div>
+        
+        <div id="mensagem-status" style="display:none; padding: 15px; margin-top: 20px; text-align: center; border-radius: 12px; font-weight: 500;"></div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
