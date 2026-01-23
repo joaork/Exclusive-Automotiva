@@ -6,7 +6,10 @@
 
 ## 📸 Demonstração
 
-![Screenshot da Home]([(https://imgur.com/va0f24I)])
+![Screenshot da Home]
+<img width="2552" height="1222" alt="image" src="https://github.com/user-attachments/assets/17688a53-efc8-46bf-ae76-7ff7fa0c53b6" />
+
+
 
 
 ## 📄 Sobre o Projeto
